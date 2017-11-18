@@ -47,7 +47,7 @@
         margin: 0;
         font-family: gothicR
     }
-
+html { -webkit-text-size-adjust: none; }
     body {
         display: flex;
         flex-direction: column;

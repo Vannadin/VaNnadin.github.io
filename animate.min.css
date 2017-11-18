@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2017 Daniel Eden
  */
-
+html { -webkit-text-size-adjust: none; }
 .animated {
     animation-duration: 1s;
     animation-fill-mode: both
