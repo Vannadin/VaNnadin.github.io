@@ -87,10 +87,10 @@
         display: inline-block;
         font-size: 20px;
 
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
 
-        height: 60px;
+        height: 55px;
         line-height: 45px;
         vertical-align: top;
 
@@ -136,6 +136,7 @@
         .topnav a.icon {
             float: right;
             display: block;
+            height: 55px;
         }
         .topnav.responsive {
             position: relative;
@@ -154,7 +155,7 @@
             transition: 0.5s;
         }
         .space.Add {
-            margin-top: 115px;
+            margin-top: 110px;
         }
     }
 
