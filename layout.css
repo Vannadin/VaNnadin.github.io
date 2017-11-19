@@ -78,7 +78,6 @@
         margin-top: 0px;
         margin-bottom: 0px;
         background-color: #373A44;
-
     }
 
     .topnav a,
@@ -191,6 +190,12 @@
         max-width: 1200px;
     }
 
+    .link {
+        margin: 0 30px;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 20px;
+    }
     footer {
         background-color: #2A2C2E;
         font-size: 14px;
