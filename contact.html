@@ -3,27 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
     <title>VnD Homepage</title>
     <link rel="stylesheet" href="layout.css" />
-    <script src="./animation.jsimg"></script>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        var y = document.getElementById("space")
+        if (x.className === "topnav") {
+            x.className += " responsive",
+                y.className += " Add";
+        } else {
+            x.className = "topnav",
+                y.className = "space"
+
+        }
+    }
+    </script>
 </head>
 
 <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
     <header>
-        <div id="head_menu">
-            <ul>
-                <li><a href="index.html" class="head_content">HOME</a></li>
-                <li>|</li>
-                <li><a href="index.html" class="head_content">WORKS</a></li>
-                <li>|</li>
-                <li><a href="contact.html" class="head_content">CONTACT</a></li>
-            </ul>
+        <div class="topnav" id="myTopnav">
+            <a href="index.html">HOME</a>
+            <p>|</p>
+            <a href="index.html">WORKS</a>
+            <p>|</p>
+            <a href="contact.html" class="active">CONTACT</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
     </header>
-    <section id="background">
-        <div id="content">
-            <h1>CONTACT</h1>
+    <section id="space" class="space">
+        <div>
+            <div id="content">
+                <p id="title">CONTACT</p>
+            </div>
         </div>
     </section>
     <footer>
