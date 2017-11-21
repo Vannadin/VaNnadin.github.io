@@ -199,7 +199,13 @@ section {
     margin: 0 auto;
     max-width: 1200px;
 }
-
+a{
+    font-family: sqareEB;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
 
 /* contact 페이지 */
 
@@ -254,4 +260,5 @@ footer {
     padding-top: 10px;
     text-align: center;
     font-size: 9pt;
+    font-family: gothicR
 }
