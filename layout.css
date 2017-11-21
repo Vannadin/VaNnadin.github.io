@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+
+
 /*color 
     main-1: #373A44 (어두운 회색)
     main-2: #D9DADE (회색)
@@ -122,14 +124,17 @@ body {
 }
 
 
-/* 내비게이션 모바일 애니메이션 */
+/* 헤더 모바일 */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     .topnav a:not(.active) {
         display: none;
     }
     .topnav a {
         margin: 0;
+    }
+    .topnav a:hover {
+        font-size: 20px;
     }
     .topnav p {
         display: none;
@@ -160,9 +165,6 @@ body {
     }
     .space.Add {
         margin-top: 110px;
-    }
-    .link{
-        margin: 0;
     }
 }
 
@@ -197,13 +199,36 @@ section {
     margin: 0 auto;
     max-width: 1200px;
 }
-.link{
-    display: inline-block;
-    margin: 0 7%;
-}
-.img1{
+
+
+/* contact 페이지 */
+
+.img1 {
     height: 100px;
+    margin: 0 50px;
 }
+
+#contact {
+    margin-top: 100px;
+    height: 300px;
+    bottom: 0
+}
+
+#fname {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+@media screen and (max-width: 500px) {
+
+    .img1 {
+        margin: 0 3%;
+    }
+}
+
+
+/* 푸터 */
 
 footer {
     background-color: #2A2C2E;
