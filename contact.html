@@ -40,15 +40,17 @@
                 <a href="http://blog.naver.com/pylon123123" target="_blank">
                     <img src="./img/naver blog.svg" alt="blog"  class="img1">
                 </a>
+                <div id=imgspace></div>
                 <a href="https://www.youtube.com/channel/UCwmRKhB7ZNN1p2FXfpnl-AQ" target="_blank">
                     <img src="./img/youtube.svg" alt="youtube" class="img1">
                 </a>
             </div>
             <div id=contact>
-                <form action="/action_page.php">
-                    <input type="text" id="fname" name="name" placeholder="Your name">
-                    <input type="text" id="fname" name="email" placeholder="Email">
-                    <input type="text" id="fname" name="comment" placeholder="comment" style="height:100px;">
+                <form>
+                    <input type="text" id="fname" name="name" placeholder="Your name" required="이름 혹은 닉네임을 입력해주세요">
+                    <input type="email" id="fname" name="email" placeholder="Email" required="이메일을 입력해주세요">
+                    <textarea name="comment" id="fname" cols="30" rows="10" placeholder="Comment"></textarea>
+                    <input type="submit" value="Submit">
 
                 </form>
             </div>

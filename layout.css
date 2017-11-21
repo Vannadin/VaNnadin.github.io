@@ -11,37 +11,37 @@
 
 @font-face {
     font-family: sqareR;
-    src: url(./font/NanumSquareR.ttf);
+    src: url(./font/NanumSquareR.woff);
 }
 
 @font-face {
     font-family: SqareL;
-    src: url(./font/NanumSquareL.ttf);
+    src: url(./font/NanumSquareL.woff);
 }
 
 @font-face {
     font-family: SqareEB;
-    src: url(./font/NanumSquareEB.ttf);
+    src: url(./font/NanumSquareEB.woff);
 }
 
 @font-face {
     font-family: gothicR;
-    src: url(./font/NanumGothicRegular.ttf);
+    src: url(./font/NanumGothicRegular.woff);
 }
 
 @font-face {
     font-family: gothicL;
-    src: url(./font/NanumGothicLight.ttf);
+    src: url(./font/NanumGothicLight.woff);
 }
 
 @font-face {
     font-family: gothicB;
-    src: url(./font/NanumGothicBold.ttf);
+    src: url(./font/NanumGothicBold.woff);
 }
 
 @font-face {
     font-family: pen;
-    src: url(./font/NanumPen.ttf);
+    src: url(./font/NanumPen.woff);
 }
 
 * {
@@ -205,25 +205,37 @@ section {
 
 .img1 {
     height: 100px;
-    margin: 0 50px;
+    margin: 0 3%;
+}
+#imgspace{
+    width: 20px;
+    display: inline-block;
 }
 
 #contact {
-    margin-top: 100px;
+    margin-top: 75px;
     height: 300px;
-    bottom: 0
+    bottom: 0;
 }
 
 #fname {
     display: block;
     margin: 0 auto;
-    max-width: 800px;
+    width: 70%;
+    font-size: 12pt;
+    padding: 5px;
+    margin-bottom: 5px;
+    resize: vertical;
+    vertical-align: text-top;
+    font-family: gothicR
+}
+input[type=submit]{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
-
-    .img1 {
-        margin: 0 3%;
+    #fname{
+        width: 100%;
     }
 }
 
