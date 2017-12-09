@@ -68,9 +68,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
-
 /* 최상단 내비게이션 */
 
 .topnav {
@@ -82,6 +79,7 @@ body {
     margin-top: 0px;
     margin-bottom: 0px;
     background-color: #373A44;
+    font-family: gothicB;
 }
 
 .topnav a,
@@ -108,7 +106,6 @@ body {
     transition: 0.5s;
     text-decoration: none;
     color: #D9DADE;
-    font-family: gothicB;
 }
 
 .topnav a:hover {
