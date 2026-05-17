@@ -8,10 +8,10 @@
 /* ── Variables ── */
 :root {
     --nav-h: 60px;
-    --glass-bg:     rgba(255, 255, 255, 0.07);
-    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-bg:     rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.18);
     --glass-blur:   blur(16px);
-    --nav-bg:       rgba(20, 22, 30, 0.65);
+    --nav-bg:       rgba(20, 22, 30, 0.75);
     --accent:       #a0b4ff;
     --text:         #d9dade;
     --text-dim:     #7a8090;
@@ -28,12 +28,17 @@ body {
     color: var(--text);
     background-color: var(--bg-dark);
     background-image:
-        linear-gradient(rgba(10, 10, 20, 0.6), rgba(10, 10, 20, 0.6)),
+        linear-gradient(rgba(10, 10, 20, 0.55), rgba(10, 10, 20, 0.55)),
         url(./img/City-At-Night-Backgrounds3.png);
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+
+/* fixed attachment doesn't work on mobile browsers */
+@media (max-width: 768px) {
+    body { background-attachment: scroll; }
 }
 
 /* ── Glass card ── */
@@ -43,6 +48,13 @@ body {
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 16px;
+    /* fallback for browsers without backdrop-filter */
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* fallback: solid-ish background when backdrop-filter unsupported */
+@supports not (backdrop-filter: blur(1px)) {
+    .glass-card { background: rgba(18, 20, 32, 0.82); }
 }
 
 /* ── Navbar ── */
@@ -145,20 +157,22 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    padding: 52px 72px;
+    padding: 48px 64px;
     text-align: center;
+    width: 100%;
+    max-width: 480px;
 }
 
 .hero-logo {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     filter: drop-shadow(0 0 24px rgba(160, 180, 255, 0.35));
 }
 
 .hero-title {
     font-family: gothicB;
-    font-size: 3rem;
+    font-size: 2.8rem;
     letter-spacing: 10px;
     text-shadow: 0 0 24px rgba(160, 180, 255, 0.4);
 }
@@ -189,8 +203,9 @@ section {
 }
 
 @media (max-width: 520px) {
-    .hero-card  { padding: 36px 28px; }
-    .hero-title { font-size: 2.2rem; letter-spacing: 7px; }
+    .hero-card  { padding: 32px 24px; }
+    .hero-logo  { width: 96px; height: 96px; }
+    .hero-title { font-size: 2rem; letter-spacing: 7px; }
 }
 
 /* ── Works ── */
@@ -198,7 +213,8 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
-    width: 100%;    max-width: 1000px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .project-card {
