@@ -1,51 +1,136 @@
 <!DOCTYPE html>
-<html lang="En">
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-    <title>VnD Homepage</title>
-    <link rel="stylesheet" href="layout.css" />
-    <script>
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        var y = document.getElementById("space")
-        if (x.className === "topnav") {
-            x.className += " responsive",
-            y.className += " Add";
-        } else {
-            x.className = "topnav",
-            y.className = "space"
-
-        }
-    }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaNnaDin</title>
+    <link rel="stylesheet" href="layout.css">
 </head>
+<body>
 
-<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
-    <header>
-        <div class="topnav" id="myTopnav">
-            <a href="index.html" >HOME</a>
-            <span><p>|</p>
-            <a href="index.html">WORKS</a>
-            <span>|</span>
-            <a href="contact.html" class="active">CONTACT</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a class="nav-logo" href="#hero">VND</a>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#works">WORKS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
         </div>
-    </header>
-    <div id="space" class="space">
-        <img src="./img/logo.png" alt="logo_img" height="250px" width="250px">
-    </div>
-    <section>
-        <div>
-            <p id="title">VANNADIN</p>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-card glass-card">
+            <img src="./img/logo.png" alt="VaNnaDin logo" class="hero-logo">
+            <h1 class="hero-title">VANNADIN</h1>
+            <p class="hero-sub">Game Developer &amp; Creator</p>
+            <a href="#works" class="btn-ghost">VIEW WORKS &darr;</a>
         </div>
     </section>
-    <footer>
-        <p id="copyright">This site has been created for use as my portfolio.
-            <br> &copy; 2017 VaNnaDin All Rihgts Reserved
-        </p>
-    </footer>
-</body>
 
+    <!-- WORKS -->
+    <section id="works" class="works">
+        <h2 class="section-title">WORKS</h2>
+        <div class="works-grid">
+            <article class="project-card glass-card">
+                <div class="card-thumb">
+                    <img src="./img/screenshot1.png" alt="Project 1">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Game Dev</span>
+                    <h3>Project Title</h3>
+                    <p>프로젝트 설명을 입력해주세요.</p>
+                </div>
+            </article>
+            <article class="project-card glass-card">
+                <div class="card-thumb">
+                    <img src="./img/screenshot2.png" alt="Project 2">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Development</span>
+                    <h3>Project Title</h3>
+                    <p>프로젝트 설명을 입력해주세요.</p>
+                </div>
+            </article>
+            <article class="project-card glass-card project-placeholder">
+                <div class="card-body centered">
+                    <span class="plus-icon">+</span>
+                    <p>Coming Soon</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="contact-wrap">
+            <div class="social-links glass-card">
+                <a href="http://blog.naver.com/pylon123123" target="_blank" rel="noopener noreferrer">
+                    <img src="./img/naver blog.svg" alt="Naver Blog">
+                    <span>Naver Blog</span>
+                </a>
+                <a href="https://www.youtube.com/channel/UCwmRKhB7ZNN1p2FXfpnl-AQ" target="_blank" rel="noopener noreferrer">
+                    <img src="./img/youtube.svg" alt="YouTube">
+                    <span>YouTube</span>
+                </a>
+            </div>
+            <form class="contact-form glass-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2017 VaNnaDin &nbsp;&middot;&nbsp; All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const links  = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+        links.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', () => links.classList.remove('open'))
+        );
+
+        const sections = document.querySelectorAll('section[id]');
+        const navAs    = document.querySelectorAll('.nav-links a');
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting)
+                    navAs.forEach(a =>
+                        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)
+                    );
+            });
+        }, { threshold: 0.4 }).observe = (() => {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting)
+                        navAs.forEach(a =>
+                            a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)
+                        );
+                });
+            }, { threshold: 0.4 });
+            sections.forEach(s => obs.observe(s));
+        })();
+
+        const fadeObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    fadeObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.project-card, .social-links, .contact-form')
+            .forEach(el => fadeObs.observe(el));
+    </script>
+
+</body>
 </html>
